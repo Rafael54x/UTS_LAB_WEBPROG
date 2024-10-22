@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
         $file_name = uniqid() . '_' . basename($_FILES['profile_picture']['name']);
         $target_file = $upload_dir . $file_name;
         $file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
+    
         $allowed_types = ['jpg', 'jpeg', 'png', 'gif'];
         if (!in_array($file_type, $allowed_types)) {
             $error = "Unsupported file format. Only JPG, JPEG, PNG, and GIF are allowed.";
@@ -41,10 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
             if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $target_file)) {
                 $profile_picture = $target_file;
             } else {
-                $error = "Failed to upload the image.";
+                $error = "Failed to upload the image. Error code: " . $_FILES['profile_picture']['error'];
             }
+            
         }
     }
+    
 
     if (empty($error)) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -62,13 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
             $stmt->execute([$username, $email, $hashed_password, $profile_picture, $_SESSION['user_id']]);
             $success = "Profile updated successfully.";
 
-            // Refresh user data
+            
             $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
             $stmt->execute([$_SESSION['user_id']]);
             $user = $stmt->fetch();
         }
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +154,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                         <label for="profile_picture" class="camera-icon absolute top-0 left-0 p-4 cursor-pointer">
                             <i class="fa-solid fa-camera text-xl"></i>
                         </label>
-
 
                         <input type="file" id="profile_picture" name="profile_picture" class="hidden" accept="image/*">
                     </div>

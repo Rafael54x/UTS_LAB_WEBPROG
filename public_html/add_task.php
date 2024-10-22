@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     },
                     animation: {
                         fadeIn: 'fadeIn 0.5s ease-out',
-                        slideIn: 'slideIn 0.5s ease-out',
+                        slideIn: 'slideIn 0.1s ease-out',
                     }
                 }
             }
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <div id="taskPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden font-montserrat">
-        <div class="bg-white rounded-[20px] shadow-lg p-6 sm:p-8 text-center max-w-[90%] sm:max-w-md mx-auto">
+        <div class="bg-white rounded-[20px] shadow-lg p-6 sm:p-8 text-center max-w-[90%] sm:max-w-md mx-auto animate-slideIn">
             <h2 class="text-xl sm:text-2xl font-bold text-bluey mb-4">Task has been Successfully Added!</h2>
             <img src="added1.png" alt="Task Added" class="mx-auto mb-4 w-[150px] sm:w-[200px]" />
             <div class="flex flex-col space-y-2 sm:space-y-0 justify-center sm:space-x-4">
