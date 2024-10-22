@@ -166,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                             <input type="text"
                                 name="username"
                                 value="<?= htmlspecialchars($user['username']) ?>"
-                                class="w-full px-4 py-3 bg-[#CDCDCD] rounded-lg border-1 border-gray-300 font-montserrat">
+                                class="w-full px-4 py-3 bg-[#F5F5F5] rounded-lg border-2 border-gray-300 font-montserrat">
                         </div>
 
                         <div>
@@ -176,7 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                             <input type="email"
                                 name="email"
                                 value="<?= htmlspecialchars($user['email']) ?>"
-                                class="w-full px-4 py-3 bg-[#CDCDCD] rounded-lg border-1 border-gray-300 font-montserrat">
+                                class="w-full px-4 py-3 bg-[#F5F5F5] rounded-lg border-2 border-gray-300 font-montserrat">
                         </div>
 
                         <div>
@@ -185,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                             </label>
                             <input type="password"
                                 name="current_password"
-                                class="w-full px-4 py-3 bg-[#CDCDCD] rounded-lg border-1 border-gray-300 font-montserrat">
+                                class="w-full px-4 py-3 bg-[#F5F5F5] rounded-lg border-2 border-gray-300 font-montserrat">
                         </div>
 
                         <div>
@@ -194,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                             </label>
                             <input type="password"
                                 name="new_password"
-                                class="w-full px-4 py-3 bg-[#CDCDCD] rounded-lg border-1 border-gray-300 font-montserrat">
+                                class="w-full px-4 py-3 bg-[#F5F5F5] rounded-lg border-2 border-gray-300 font-montserrat">
                         </div>
 
                         <div>
@@ -203,17 +203,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                             </label>
                             <input type="password"
                                 name="confirm_password"
-                                class="w-full px-4 py-3 bg-[#CDCDCD] rounded-lg border-1 border-gray-300 font-montserrat">
+                                class="w-full px-4 py-3 bg-[#F5F5F5] rounded-lg border-2 border-gray-300 font-montserrat">
                         </div>
 
-                        <div class="flex gap-4 pt-4">
+                        <div class="flex gap-4">
                             <button type="submit"
                                 name="update"
-                                class="flex-1 bg-[#4E46E5] hover:bg-primary text-white py-3 px-6 rounded-lg transition-colors font-montserrat font-bold">
+                                class="flex-1 bg-[#4E46E5] h-[45px] hover:bg-primary text-white p-2 rounded-lg transition-colors font-montserrat font-bold">
                                 Save
                             </button>
                             <a href="profile.php"
-                                class="flex-1 bg-white text-[#4E46E5] border-2 border-[#4E46E5] py-3 px-6 rounded-lg hover:bg-gray-50 transition-colors font-montserrat font-bold text-center">
+                                class="flex-1 bg-white h-[45px] text-[#4E46E5] border-2 border-[#4E46E5] p-2 rounded-lg transition-colors font-montserrat font-bold text-center">
                                 Cancel
                             </a>
                         </div>
