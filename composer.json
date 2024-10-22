@@ -1,0 +1,13 @@
+{
+    "name": "thomas/lab",
+    "description": "phpmailer",
+    "autoload": {
+        "psr-4": {
+            "Thomas\\Lab\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "dev-master"
+    }
+}
